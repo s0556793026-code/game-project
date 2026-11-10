@@ -34,6 +34,12 @@ def check_victory(board, player):
             return True
     return False
 
+def is_tied(board):
+    for cell in board:
+        if cell == ' ':
+            return False
+    return True
+
 
 
 

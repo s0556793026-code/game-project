@@ -1,6 +1,7 @@
-from logic import board, show_board, update_board, check_victory
+from logic import board, show_board, update_board, check_victory, is_tied
 from validation import  is_cell_available ,is_digits, is_in_range_and_digits
 from i_o import get_input_and_validate
+
 
 def main():
     player = 'x'
@@ -15,6 +16,10 @@ def main():
             if is_victory:
                 print(show_board(board))
                 print(f"{player} von the game")
+            elif is_tied(board):
+                print(show_board(board))
+                print("The game ended in a draw.")
+                is_victory = True
             elif player == 'x':
                 player = 'o'
             else:

@@ -16,7 +16,9 @@ def is_in_range_and_digits(choice):
     
 
 def is_cell_available(board, choice):
-    return board[choice - 1] == ' '
-
+    if board[choice - 1] == ' ':
+        return True
+    print("cell is not available try again")
+    return False
 
 
